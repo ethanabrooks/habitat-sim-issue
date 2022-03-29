@@ -9,8 +9,5 @@ for i in itertools.count():
     done = False
     while not done:
         action = env.action_space.sample()
-        try:
-            env.step(action)
-        except Exception:
-            pass
+        env.step(action)
         done = env.episode_over
