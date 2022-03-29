@@ -8,5 +8,9 @@ unzip ~/.cache/data/v1/tasks/mp3d_habitat.zip -d ~/.cache/data/tasks/
 
 Run with 
 ```
-./run.sh
+docker build -t issue .
+docker run --rm -it \
+  --gpus all \
+  -v "$HOME/.cache/data/:/root/.cache/data" \
+  issue main.py
 ```
