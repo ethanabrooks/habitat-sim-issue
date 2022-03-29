@@ -39,5 +39,5 @@ TASK:
 DATASET:
   TYPE: ObjectNav-v1
   SPLIT: train
-  DATA_PATH: ~/.cache/data/train/content/HxpKQynjfin.json.gz
-  SCENES_DIR: ~/.cache/data/tasks/
+  DATA_PATH: /root/.cache/data/train/content/HxpKQynjfin.json.gz
+  SCENES_DIR: /root/.cache/data/tasks/
