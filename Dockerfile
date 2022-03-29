@@ -87,6 +87,6 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 COPY --from=python-deps $VIRTUAL_ENV $VIRTUAL_ENV
 COPY --from=python-deps /deps/habitat-sim /deps/habitat-sim
 COPY main.py .
-COPY objectnav_mp3d.yaml .
+COPY config.yaml .
 
 ENTRYPOINT ["python"]
