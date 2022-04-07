@@ -1,13 +1,16 @@
 import itertools
 import habitat
+import numpy as np
+from PIL import Image
 
 
 env = habitat.Env(config=habitat.get_config("config.yaml"))
-for i in itertools.count():
-    print(i)
-    env.reset()
-    done = False
-    while not done:
-        action = env.action_space.sample()
-        env.step(action)
-        done = env.episode_over
+env.seed(0)
+obs = env.reset()
+rgb = obs["rgb"]
+semantic = np.expand_dims(obs["semantic"], -1)
+rgb, semantic = np.broadcast_arrays(rgb, semantic)
+a = np.concatenate([rgb, semantic], axis=0)
+breakpoint()
+img = Image.fromarray(a, mode="RGB")
+img.save("image.jpeg")

@@ -50,7 +50,7 @@ ENV PYTHONBREAKPOINT=ipdb.set_trace
 COPY pyproject.toml poetry.lock .
 RUN pip install poetry==1.1.12 \
     # https://github.com/python-poetry/poetry/discussions/1879#discussioncomment-216870
-    && poetry export --without-hashes -f requirements.txt | pip install -r /dev/stdin 
+    && poetry export --dev --without-hashes -f requirements.txt | pip install -r /dev/stdin 
 
 WORKDIR "/project"
 
