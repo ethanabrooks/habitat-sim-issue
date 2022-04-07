@@ -11,6 +11,5 @@ rgb = obs["rgb"]
 semantic = np.expand_dims(obs["semantic"], -1)
 rgb, semantic = np.broadcast_arrays(rgb, semantic)
 a = np.concatenate([rgb, semantic], axis=0)
-breakpoint()
 img = Image.fromarray(a, mode="RGB")
 img.save("image.jpeg")
